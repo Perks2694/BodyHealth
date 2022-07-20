@@ -10,7 +10,7 @@ namespace BodyHealth.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Facility> DataStore => DependencyService.Get<IDataStore<Facility>>();
 
         bool isBusy = false;
         public bool IsBusy

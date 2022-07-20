@@ -49,7 +49,7 @@ namespace BodyHealth.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            Facility newItem = new Facility()
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,

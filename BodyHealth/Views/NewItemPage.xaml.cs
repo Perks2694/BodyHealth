@@ -10,7 +10,7 @@ namespace BodyHealth.Views
 {
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Facility Item { get; set; }
 
         public NewItemPage()
         {

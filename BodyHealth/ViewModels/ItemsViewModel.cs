@@ -10,20 +10,20 @@ namespace BodyHealth.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private Facility _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<Facility> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<Facility> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Facility>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<Facility>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -57,7 +57,7 @@ namespace BodyHealth.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public Facility SelectedItem
         {
             get => _selectedItem;
             set
@@ -72,7 +72,7 @@ namespace BodyHealth.ViewModels
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(Facility item)
         {
             if (item == null)
                 return;
